@@ -23,23 +23,22 @@ function sendTelegramMessage($pm) {
 
 function tg_notify_ClientAdd($vars) {
 	global $customadminpath, $CONFIG;
-	sendTelegramMessage("A new user has been registered \n---------------------------------------------------------------------------------------------- \n\n". $CONFIG['SystemURL'].'/'.$customadminpath.'/clientssummary.php?userid='.$vars['userid']);
+	sendTelegramMessage("A new user has been registered \n---------------------------------------------------------------------------------------------- \n". $CONFIG['SystemURL'].'/'.$customadminpath.'/clientssummary.php?userid='.$vars['userid']);
 }
 
 function tg_notify_InvoicePaid($vars) {
 	global $customadminpath, $CONFIG;
-	sendTelegramMessage("An invoice was paid \n---------------------------------------------------------------------------------------------- \n\n Invoice ID: $vars[invoiceid] \n\n Amount: $vars[total] \n\n". $CONFIG['SystemURL'].'/'.$customadminpath.'/invoices.php?action=edit&id='.$vars['invoiceid']);
+	sendTelegramMessage("An invoice was paid \n---------------------------------------------------------------------------------------------- \n Invoice ID: $vars[invoiceid] \n Amount: $vars[total] \n". $CONFIG['SystemURL'].'/'.$customadminpath.'/invoices.php?action=edit&id='.$vars['invoiceid']);
 }
 
 function tg_notify_TicketOpen($vars) {
 	global $customadminpath, $CONFIG;
-	sendTelegramMessage("A new ticket was created \n---------------------------------------------------------------------------------------------- \n\n Ticket ID: $vars[ticketid] \n\n Department: $vars[deptname] \n\n Subject: $vars[subject] \n\n". $CONFIG['SystemURL'].'/'.$customadminpath.'/supporttickets.php?action=viewticket&id='.$vars['ticketid']);
+	sendTelegramMessage("A new ticket was created \n---------------------------------------------------------------------------------------------- \n Ticket ID: $vars[ticketid] \n Department: $vars[deptname] \n Subject: $vars[subject] \n". $CONFIG['SystemURL'].'/'.$customadminpath.'/supporttickets.php?action=viewticket&id='.$vars['ticketid']);
 }
 
 function tg_notify_TicketUserReply($vars) {
 	global $customadminpath, $CONFIG;
-	sendTelegramMessage("A new ticket response \n---------------------------------------------------------------------------------------------- \n\n Ticket ID: $vars[ticketid] \n\n Department
-: $vars[deptname] \n\n Subject: $vars[subject] \n\n". $CONFIG['SystemURL'].'/'.$customadminpath.'/supporttickets.php?action=viewticket&id='.$vars['ticketid']);
+	sendTelegramMessage("A new ticket response \n---------------------------------------------------------------------------------------------- \n Ticket ID: $vars[ticketid] \n Department: $vars[deptname] \n Subject: $vars[subject] \n". $CONFIG['SystemURL'].'/'.$customadminpath.'/supporttickets.php?action=viewticket&id='.$vars['ticketid']);
 
 }
 
